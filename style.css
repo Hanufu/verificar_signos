@@ -1,0 +1,56 @@
+body{
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16pt;
+}
+header{
+    text-align-last: center;
+    color: purple;
+    text-shadow: 2px 2px black;
+    font-size: 32pt;
+    font-family: cursive;
+}
+section{
+    border: solid 2px black;
+    background: purple;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    padding: 15px;
+    margin: auto;
+    font-family: monospace;
+    text-shadow: 2px 2px black;
+    font-size: 24pt;
+}
+div{
+    height: auto;
+}
+#button{
+    border: solid 2px black;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    font: caption;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font: bolder;
+    text-shadow: 2px black;
+    font-size: 16pt;
+}
+#mensagem{
+    font-size: 36pt;    
+}
+footer{
+    text-align: center;
+    font: bolder;
+    font-size: 24pt;
+}
+.input{
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 8px;
+    height: 10px;
+    width: 250px;
+    font-size: 16pt;
+    text-align: center;
+
+}
