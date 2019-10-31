@@ -15,9 +15,9 @@
     </header>
     <section id="section">
         <div id="formularios">
-            <label for="dia">Dia de Nascimento: <input type="number" class='input' name="dia" id="dia"></label>
+            <label for="dia">Dia de Nascimento: <input type="number" class='input' name="dia" id="dia" min='0' max='31'></label>
             <br />
-            <label for="mes">Mês de Nascimento: <input type="number" class='input' name="mes" id="mes"></label>
+            <label for="mes">Mês de Nascimento: <input type="number" class='input' name="mes" id="mes" min='0' max='12'></label>
             <br />
             <br />
             <input type="button" value="Verificar" id="button" onclick="verificar()">
