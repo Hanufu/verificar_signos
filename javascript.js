@@ -1,208 +1,56 @@
-    var dia = window.document.getElementById('dia');
-    var mes = window.document.getElementById('mes');
-    var mensagem = window.document.getElementById('mensagem');
-    var imagem = window.document.getElementById('imagem');
-    var foto = window.document.getElementById('foto');
-    var section = window.document.getElementById('section')
-    var h1 = window.document.getElementById('h1')
-    
+// Obtenha referências aos elementos DOM
+const dia = document.getElementById('dia');
+const mes = document.getElementById('mes');
+const mensagem = document.getElementById('mensagem');
+const foto = document.getElementById('foto');
+const section = document.getElementById('section');
+const h1 = document.getElementById('h1');
 
-function verificar(){
-    
+// Dados dos signos
+const signos = [
+    { nome: 'Capricórnio', img: 'Capricornio.png', cor: 'Green', inicio: { mes: 12, dia: 22 }, fim: { mes: 1, dia: 19 } },
+    { nome: 'Aquário', img: 'Aquario.png', cor: 'SlateGray', inicio: { mes: 1, dia: 20 }, fim: { mes: 2, dia: 18 } },
+    { nome: 'Peixes', img: 'Peixes.png', cor: 'SlateBlue', inicio: { mes: 2, dia: 19 }, fim: { mes: 3, dia: 20 } },
+    { nome: 'Áries', img: 'Aries.png', cor: 'DarkRed', inicio: { mes: 3, dia: 21 }, fim: { mes: 4, dia: 20 } },
+    { nome: 'Touro', img: 'Touro.png', cor: 'SaddleBrown', inicio: { mes: 4, dia: 21 }, fim: { mes: 5, dia: 20 } },
+    { nome: 'Gêmeos', img: 'Gemeos.png', cor: 'Crimson', inicio: { mes: 5, dia: 21 }, fim: { mes: 6, dia: 20 } },
+    { nome: 'Câncer', img: 'Cancer.png', cor: 'OrangeRed', inicio: { mes: 6, dia: 21 }, fim: { mes: 7, dia: 22 } },
+    { nome: 'Leão', img: 'Leao.png', cor: 'Gold', inicio: { mes: 7, dia: 23 }, fim: { mes: 8, dia: 22 } },
+    { nome: 'Virgem', img: 'Virgem.png', cor: 'Fuchsia', inicio: { mes: 8, dia: 23 }, fim: { mes: 9, dia: 22 } },
+    { nome: 'Libra', img: 'Libra.png', cor: 'SpringGreen', inicio: { mes: 9, dia: 23 }, fim: { mes: 10, dia: 22 } },
+    { nome: 'Escorpião', img: 'Escorpiao.png', cor: 'Tomato', inicio: { mes: 10, dia: 23 }, fim: { mes: 11, dia: 21 } },
+    { nome: 'Sagitário', img: 'Sargitario.png', cor: 'Orchid', inicio: { mes: 11, dia: 22 }, fim: { mes: 12, dia: 21 } }
+];
 
-    if(mes.value == 01 || mes.value == 1){
-        if(dia.value <= 19){
-            mensagem.innerHTML = 'Capricórnio';
-            foto.src = "Capricornio.png"
-            //---------------------------------------------//
-                section.style.backgroundColor = 'Green'
-                h1.style.color = 'Green'
-            //---------------------------------------------//
+// Função para verificar o signo
+function verificar() {
+    const diaVal = parseInt(dia.value, 10);
+    const mesVal = parseInt(mes.value, 10);
 
-        }else if(dia.value >19){
-            mensagem.innerHTML = 'Aquário'
-            foto.src = "Aquario.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'SlateGray'
-            h1.style.color = 'SlateGray'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 02 || mes.value == 2){
-        if(dia.value <= 18){
-            mensagem.innerHTML = 'Aquário'
-            foto.src = "Aquario.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'SlateGray'
-            h1.style.color = 'SlateGray'
-        //---------------------------------------------//
-        }else if(dia.value > 18){
-            mensagem.innerHTML = 'Peixes'
-            foto.src = "Peixes.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'SlateBlue'
-            h1.style.color = 'SlateBlue'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 03 || mes.value == 3){
-        if(dia.value <=20){
-            mensagem.innerHTML = 'Peixes'
-            foto.src = "Peixes.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'SlateBlue'
-            h1.style.color = 'SlateBlue'
-        //---------------------------------------------//
-        }else if(dia.value > 20){
-            mensagem.innerHTML = 'Áries'
-            foto.src = "Aries.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'DarkRed'
-            h1.style.color = 'DarkRed'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 04 || mes.value == 4){
-        if(dia.value <= 21){
-            mensagem.innerHTML = 'Áries'
-            foto.src = "Aries.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'DarkRed'
-            h1.style.color = 'DarkRed'
-        //---------------------------------------------//
-        }else if(dia.value > 21){
-            mensagem.innerHTML = 'Touro'
-            foto.src = "Touro.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'SaddleBrown'
-            h1.style.color = 'SaddleBrown'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 05 || mes.value == 5){
-        if(dia.value <= 20){
-            mensagem.innerHTML = 'Touro'
-            foto.src = "Touro.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'SaddleBrown'
-            h1.style.color = 'SaddleBrown'
-        //---------------------------------------------//
-        }else if(dia.value > 20){
-            mensagem.innerHTML = 'Gêmeos'
-            foto.src = "Gemeos.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Crimson'
-            h1.style.color = 'Crimson'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 06 || mes.value == 6){
-        if(dia.value <= 21){
-            mensagem.innerHTML = 'Gêmeos'
-            foto.src = "Gemeos.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Crimson'
-            h1.style.color = 'Crimson'
-        //---------------------------------------------//
-        }else if(dia.value >21){
-            mensagem.innerHTML = 'Câncer'
-            foto.src = "Cancer.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = ''
-            h1.style.color = ''
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 07 || mes.value == 7){
-        if(dia.value <= 22){
-            mensagem.innerHTML = 'Câncer'
-            foto.src = "Cancer.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'OrangeRed'
-            h1.style.color = 'OrangeRed'
-        //---------------------------------------------//
-        }else if(dia.value >22){
-            mensagem.innerHTML = 'Leão'
-            foto.src = "Leao.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Gold'
-            h1.style.color = 'Gold'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 08 || mes.value == 8){
-        if(dia.value <= 23){
-            mensagem.innerHTML = 'Leão'
-            foto.src = "Leao.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Gold'
-            h1.style.color = 'Gold'
-        //---------------------------------------------//
-        }else if(dia.value >23){
-            mensagem.innerHTML = 'Virgem'
-            foto.src = "Virgem.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Fuchsia'
-            h1.style.color = 'Fuchsia'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 09 || mes.value == 9){
-        if(dia.value <= 23){
-            mensagem.innerHTML = 'Virgem'
-            foto.src = "Virgem.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Fuchsia'
-            h1.style.color = 'Fuchsia'
-        //---------------------------------------------//
-        }else if(dia.value >23){
-            mensagem.innerHTML = 'Libra'
-            foto.src = "Libra.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'SpringGreen'
-            h1.style.color = 'SpringGreen'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 10 || mes.value == 10){
-        if(dia.value <= 23){
-            mensagem.innerHTML = 'Libra'
-            foto.src = "Libra.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'SpringGreen'
-            h1.style.color = 'SpringGreen'
-        //---------------------------------------------//
-        }else if(dia.value >23){
-            mensagem.innerHTML = 'Escorpião'
-            foto.src = "Escorpiao.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Tomato'
-            h1.style.color = 'Tomato'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 11 || mes.value == 11){
-        if(dia.value <= 23){
-            mensagem.innerHTML = 'Escorpião'
-            foto.src = "Escorpiao.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Tomato'
-            h1.style.color = 'Tomato'
-        //---------------------------------------------//
-        }else if(dia.value >23){
-            mensagem.innerHTML = 'Sargitátio'
-            foto.src = "Sargitario.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Orchid'
-            h1.style.color = 'Orchid'
-        //---------------------------------------------//
-        }
-    }else if(mes.value == 12 || mes.value == 12){
-        if(dia.value <= 22){
-            mensagem.innerHTML = 'Sargitário'
-            foto.src = "Sargitario.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Orchid'
-            h1.style.color = 'Orchid'
-        //---------------------------------------------//
-        }else if(dia.value >22){
-            mensagem.innerHTML = 'Capricórnio'
-            foto.src = "Capricornio.png"
-            //---------------------------------------------//
-            section.style.backgroundColor = 'Green'
-            h1.style.color = 'Green'
-        //---------------------------------------------//
-        }
-        
+    // Validação básica de entrada
+    if (isNaN(diaVal) || isNaN(mesVal) || diaVal < 1 || diaVal > 31 || mesVal < 1 || mesVal > 12) {
+        mensagem.innerHTML = 'Data inválida';
+        return;
     }
+
+    const signo = signos.find(({ inicio, fim }) => 
+        (mesVal === inicio.mes && diaVal >= inicio.dia) || 
+        (mesVal === fim.mes && diaVal <= fim.dia) || 
+        (mesVal > inicio.mes && mesVal < fim.mes) ||
+        (inicio.mes > fim.mes && (mesVal > inicio.mes || mesVal < fim.mes))
+    );
+
+    if (signo) {
+        atualizarUI(signo);
+    } else {
+        mensagem.innerHTML = 'Data inválida';
+    }
+}
+
+// Função para atualizar a interface do usuário
+function atualizarUI(signo) {
+    mensagem.innerHTML = signo.nome;
+    foto.src = signo.img;
+    section.style.backgroundColor = signo.cor;
+    h1.style.color = signo.cor;
 }
